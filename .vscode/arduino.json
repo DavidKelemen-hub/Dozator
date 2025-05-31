@@ -1,0 +1,8 @@
+{
+    "board": "arduino:avr:uno",
+    "port": "COM10",
+    "buildProperties": {
+        "compiler.cpp.extra_flags": "-I${workspaceFolder}/inc"
+    },
+    "sketch": "src\\main\\main.ino"
+}
