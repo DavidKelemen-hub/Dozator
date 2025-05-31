@@ -38,4 +38,6 @@ void display_cyclic(void)
 {
     /* cyclic function for display module */
     // global_buffer.milliLiters - global variabila hasznald ezt
+
+    Serial.println(global_buffer.milliLiters);
 }

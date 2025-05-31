@@ -9,7 +9,11 @@
  *  Notes:
  *    
  *****************************************************************************/
+/* Define inputs */
+#define POTMETER_PIN A0
+/* Define inputs */
 
 /* Exported functions */
-extern void inputs_init();
+extern void pin_inputs_init();
+extern void pin_inputs_cyclic();
 

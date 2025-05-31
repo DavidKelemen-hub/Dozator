@@ -33,7 +33,8 @@ Global_Buffer global_buffer;
 
 void setup() 
 {
-  inputs_init();
+  Serial.begin(115200);
+  pin_inputs_init();
   input_handler_init();
   lights_init();
   display_init();
@@ -42,6 +43,7 @@ void setup()
 
 void loop() 
 {
+  pin_inputs_cyclic();
   input_handler_cyclic();
   lights_cyclic();
   display_cyclic();

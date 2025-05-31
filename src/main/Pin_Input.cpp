@@ -13,6 +13,7 @@
 /* Includes */
 #include "Arduino.h"
 #include "inc/Main.h"
+#include "inc/Pin_Input.h"
 /* Includes */
 
 /* Defines */
@@ -25,10 +26,16 @@
 
 /* Global variables */
 
-void inputs_init()
+void pin_inputs_init()
 {
 
   /* define here all input and output pins */
   pinMode(POTMETER_PIN,INPUT);
  
+}
+
+void pin_inputs_cyclic()
+{
+  /* Read inputs cyclically and store values in global buffer */
+  global_buffer.potmeter_sensorRead = analogRead(POTMETER_PIN);
 }

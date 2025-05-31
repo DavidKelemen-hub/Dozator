@@ -40,8 +40,6 @@ void input_handler_init(void)
 /*********************************************** Potentiometer /************************************************/
 static uint16 Read_Analog_PotMeter()
 {
-    global_buffer.potmeter_sensorRead = analogRead(POTMETER_PIN);
-
     return global_buffer.potmeter_sensorRead;
 }
 
@@ -51,7 +49,7 @@ static uint8 Calculate_Display_Value_ML()
     uint8 potmeter_value = 0u;
 
     potmeter_value = Read_Analog_PotMeter();
-    retVal = map(global_buffer.potmeter_sensorRead,ADC_MIN_READ,ADC_MAX_READ,MILLILITER_MIN,MILLILITER_MAX);
+    retVal = map(potmeter_value,ADC_MIN_READ,ADC_MAX_READ,MILLILITER_MIN,MILLILITER_MAX);
 
     return retVal;
 }
