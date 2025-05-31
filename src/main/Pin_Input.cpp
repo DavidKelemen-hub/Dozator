@@ -12,7 +12,7 @@
 
 /* Includes */
 #include "Arduino.h"
-#include "inc/Std_Types.h"
+#include "inc/Main.h"
 /* Includes */
 
 /* Defines */
@@ -29,5 +29,6 @@ void inputs_init()
 {
 
   /* define here all input and output pins */
+  pinMode(POTMETER_PIN,INPUT);
  
 }

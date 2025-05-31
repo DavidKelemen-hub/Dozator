@@ -10,6 +10,7 @@
  *    
  *****************************************************************************/
 
+ /* Define inputs */
  /* Exported functions */
 extern void input_handler_init(void);
 extern void input_handler_cyclic(void);

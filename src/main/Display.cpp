@@ -11,7 +11,8 @@
  *****************************************************************************/
 /* Includes */
 #include "Arduino.h"
-#include "inc/Std_Types.h"
+#include "inc/Main.h"
+#include "inc/Display.h"
 /* Includes */
 
 /* Defines */
@@ -36,4 +37,5 @@ void display_init(void)
 void display_cyclic(void)
 {
     /* cyclic function for display module */
+    // global_buffer.milliLiters - global variabila hasznald ezt
 }

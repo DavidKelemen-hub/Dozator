@@ -11,6 +11,7 @@
  *****************************************************************************/
 
 /* Includes */
+#include "inc/Main.h"
 #include "inc/Pin_Input.h"
 #include "inc/Lights.h"
 #include "inc/Display.h"
@@ -27,7 +28,7 @@
 /* **************************************************************************** */
 
 /* Global variables */
-
+Global_Buffer global_buffer;
 /* Global variables */
 
 void setup() 

@@ -11,11 +11,15 @@
  *****************************************************************************/
 /* Includes */
 #include "Arduino.h"
-#include "inc/Std_Types.h"
+#include "inc/Main.h"
+#include "inc/InputHandler.h"
 /* Includes */
 
 /* Defines */
-
+#define MILLILITER_MIN 0U
+#define MILLILITER_MAX 50U
+#define ADC_MAX_READ 1024U
+#define ADC_MIN_READ 0U
 /* Defines */
 
 /* **************************************************************************** */
@@ -33,7 +37,33 @@ void input_handler_init(void)
     /* init function for input_handler module */
 }
 
+/*********************************************** Potentiometer /************************************************/
+static uint16 Read_Analog_PotMeter()
+{
+    global_buffer.potmeter_sensorRead = analogRead(POTMETER_PIN);
+
+    return global_buffer.potmeter_sensorRead;
+}
+
+static uint8 Calculate_Display_Value_ML()
+{
+    uint8 retVal = 0u;
+    uint8 potmeter_value = 0u;
+
+    potmeter_value = Read_Analog_PotMeter();
+    retVal = map(global_buffer.potmeter_sensorRead,ADC_MIN_READ,ADC_MAX_READ,MILLILITER_MIN,MILLILITER_MAX);
+
+    return retVal;
+}
+
+/*********************************************** Potentiometer /************************************************/
+
+static void Update_Global_Buffer()
+{
+    global_buffer.milliLiters = Calculate_Display_Value_ML();
+}
+
 void input_handler_cyclic(void)
 {
-    /* cyclic function for input_handler module */
+   Update_Global_Buffer();
 }
